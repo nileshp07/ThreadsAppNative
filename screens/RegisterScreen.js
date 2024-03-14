@@ -9,7 +9,7 @@ import {
 	TextInput,
 	View,
 } from 'react-native';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import {MaterialIcons, AntDesign, Feather, Ionicons} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 import axios from 'axios';
@@ -30,17 +30,14 @@ const RegisterScreen = () => {
 		};
 
 		axios
-			.post('http://192.168.0.104:3000/register', inputData)
+			.post('http://192.168.0.101:3000/register', inputData)
 			.then((res) => {
 				console.log(res);
-				Alert.alert(
-					'Registration Successfull.',
-					'Please click on the verfiication link sent to your email.'
-				);
+				Alert.alert(res.data.message);
 				setName('');
 				setEmail('');
 				setPassword('');
-				navigation.navigate('HomeScreen');
+				navigation.navigate('Main', {screen: 'HomeScreen'});
 			})
 			.catch((err) => {
 				console.log('Error Registering.', err);

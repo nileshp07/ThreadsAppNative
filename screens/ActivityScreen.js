@@ -30,7 +30,7 @@ const ActivityScreen = () => {
 			setUserId(userId);
 
 			axios
-				.get(`http://192.168.0.104:3000/user/${userId}`)
+				.get(`http://192.168.0.101:3000/user/${userId}`)
 				.then((response) => {
 					setUsers(response.data);
 				})

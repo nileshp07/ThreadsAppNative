@@ -5,6 +5,7 @@ import {UserType} from '../UserContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {FontAwesome6} from '@expo/vector-icons';
 
 const ProfileScreen = () => {
 	const [user, setUser] = useState('');
@@ -14,7 +15,7 @@ const ProfileScreen = () => {
 		const fetchProfile = async () => {
 			try {
 				const response = await axios.get(
-					`http://192.168.0.104:3000/profile/${userId}`
+					`http://192.168.0.101:3000/profile/${userId}`
 				);
 				const {user} = response.data;
 				setUser(user);
@@ -40,17 +41,24 @@ const ProfileScreen = () => {
 		<SafeAreaView>
 			<View style={{marginTop: 30, padding: 15}}>
 				<View>
-					<View style={{flexDirection: 'row', alignItems: 'center', gap: 10}}>
-						<Text style={{fontSize: 20, fontWeight: 'bold'}}>{user?.name}</Text>
-						<View
-							style={{
-								paddingHorizontal: 7,
-								paddingVertical: 5,
-								borderRadius: 8,
-								backgroundColor: '#D0D0D0',
-							}}
-						>
-							<Text>Threads.net</Text>
+					<View style={{flexDirection: 'row', alignItems: 'center'}}>
+						<View style={{flexDirection: 'row', gap: 10, flex: 32}}>
+							<Text style={{fontSize: 20, fontWeight: 'bold'}}>
+								{user?.name}
+							</Text>
+							<View
+								style={{
+									paddingHorizontal: 7,
+									paddingVertical: 5,
+									borderRadius: 8,
+									backgroundColor: '#D0D0D0',
+								}}
+							>
+								<Text>Threads.net</Text>
+							</View>
+						</View>
+						<View style={{flex: 3}}>
+							<FontAwesome6 name='bars' size={24} color='black' />
 						</View>
 					</View>
 
