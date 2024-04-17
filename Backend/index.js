@@ -81,7 +81,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
 		from: 'John Holan, Threads',
 		to: email,
 		subject: 'Email Verification',
-		text: `Please click on the following link to verify your email: http://192.168.0.101:3000/verify/${verificationToken}`,
+		text: `Please click on the following link to verify your email: http://192.168.0.103:3000/verify/${verificationToken}`,
 	};
 
 	// 3) Send email
