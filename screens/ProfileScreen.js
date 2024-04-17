@@ -15,7 +15,7 @@ const ProfileScreen = () => {
 		const fetchProfile = async () => {
 			try {
 				const response = await axios.get(
-					`http://192.168.0.101:3000/profile/${userId}`
+					`http://192.168.0.103:3000/profile/${userId}`
 				);
 				const {user} = response.data;
 				setUser(user);
@@ -79,7 +79,7 @@ const ProfileScreen = () => {
 									resizeMode: 'contain',
 								}}
 								source={{
-									uri: 'https://cdn-icons-png.flaticon.com/128/149/149071.png',
+									uri: `https://i.pravatar.cc/48?u=${userId}`,
 								}}
 							/>
 						</View>

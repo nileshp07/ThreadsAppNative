@@ -30,7 +30,7 @@ const RegisterScreen = () => {
 		};
 
 		axios
-			.post('http://192.168.0.101:3000/register', inputData)
+			.post('http://192.168.0.103:3000/register', inputData)
 			.then((res) => {
 				console.log(res);
 				Alert.alert(res.data.message);

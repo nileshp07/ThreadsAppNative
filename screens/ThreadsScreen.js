@@ -48,7 +48,7 @@ const ThreadsScreen = () => {
 		}
 
 		axios
-			.post('http://192.168.0.101:3000/create-post', postData)
+			.post('http://192.168.0.103:3000/create-post', postData)
 			.then((response) => {
 				setContent('');
 				setWordCount(0);

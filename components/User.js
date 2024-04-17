@@ -10,7 +10,7 @@ const User = ({item}) => {
 	const [requestSent, setRequestSent] = useState(false);
 	const sendFollow = async (currentUserId, selectedUserId) => {
 		try {
-			const response = await fetch('http://192.168.0.101:3000/follow', {
+			const response = await fetch('http://192.168.0.103:3000/follow', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const User = ({item}) => {
 
 	const handleUnfollow = async (targetId) => {
 		try {
-			const response = await fetch('http://192.168.0.101:3000/users/unfollow', {
+			const response = await fetch('http://192.168.0.103:3000/users/unfollow', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const User = ({item}) => {
 						resizeMode: 'contain',
 					}}
 					source={{
-						uri: 'https://cdn-icons-png.flaticon.com/128/149/149071.png',
+						uri: `https://i.pravatar.cc/48?u=${item._id}`,
 					}}
 				/>
 
