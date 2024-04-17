@@ -7,6 +7,7 @@ import axios from 'axios';
 import {AntDesign} from '@expo/vector-icons';
 import {FontAwesome} from '@expo/vector-icons';
 import {Ionicons} from '@expo/vector-icons';
+import {Entypo} from '@expo/vector-icons';
 import {useFocusEffect} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import moment from 'moment';
@@ -107,8 +108,21 @@ const HomeScreen = () => {
 							</View>
 
 							<View style={styles.postContent}>
-								<Text style={styles.userName}>{post?.user?.name}</Text>
-								<Text>{post?.content}</Text>
+								<View
+									style={{
+										flexDirection: 'row',
+										justifyContent: 'space-between',
+									}}
+								>
+									<Text style={styles.userName}>{post?.user?.name} </Text>
+									<Entypo
+										name='dots-three-vertical'
+										size={16}
+										color='black'
+										style={{marginRight: 10}}
+									/>
+								</View>
+								<Text style={{width: '92%'}}>{post?.content}</Text>
 
 								<View
 									style={{
